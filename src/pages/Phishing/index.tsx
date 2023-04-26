@@ -69,9 +69,9 @@ export const Phishing = () => {
                   ethereumorg: (
                     <Link
                       inline
-                      to="https://ethereum.org/en/staking/deposit-contract/"
+                      to="https://bidaochain.com/deposit-contract/"
                     >
-                      ethereum.org
+                      bidaochain.com
                     </Link>
                   ),
                 }}

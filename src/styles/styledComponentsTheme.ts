@@ -12,7 +12,7 @@ export const colors = {
     lightest: '#D4D7E7',
     light: '#b0e2f5',
     medium: '#007FB0',
-    dark: '#0F2A43',
+    dark: '#e9e9e9',
   },
   green: {
     light: '#F8FAF9',

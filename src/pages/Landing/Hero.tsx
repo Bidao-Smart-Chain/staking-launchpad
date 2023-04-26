@@ -201,7 +201,7 @@ export const Hero = () => {
                   >
                     <ButtonRow>
                       <ButtonContainer>
-                        <Link to={routesEnum.acknowledgementPage}>
+                        <Link to={routesEnum.uploadValidatorPage}>
                           <Button
                             fullWidth={m || isSmallScreen}
                             rainbow

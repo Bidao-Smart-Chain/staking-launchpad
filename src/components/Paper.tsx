@@ -16,7 +16,7 @@ export const Paper = (
       border={error ? { color: 'redLight', size: 'small' } : true}
       className={className}
       pad={pad || 'large'}
-      background="white"
+      background="#111a2e"
       round="xsmall"
       {...props}
     >

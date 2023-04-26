@@ -24,7 +24,6 @@ const Container = styled.div`
   border-radius: 4px;
   cursor: pointer;
   :hover {
-    background: ${p => p.theme.gray.light};
     box-shadow: 0px 8px 17px rgba(0, 0, 0, 0.15);
     transition: transform 0.1s;
     transform: scale(1.02);

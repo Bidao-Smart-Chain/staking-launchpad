@@ -5,13 +5,13 @@ import { WorkflowStep } from '../store/actions/workflowActions';
 
 export const routeToCorrectWorkflowStep = (step: WorkflowStep): JSX.Element => {
   if (step === WorkflowStep.OVERVIEW) {
-    return <Redirect push to={routesEnum.acknowledgementPage} />;
+    return <Redirect push to={routesEnum.uploadValidatorPage} />;
   }
   if (step === WorkflowStep.SELECT_CLIENT) {
-    return <Redirect push to={routesEnum.selectClient} />;
+    return <Redirect push to={routesEnum.uploadValidatorPage} />;
   }
   if (step === WorkflowStep.GENERATE_KEY_PAIRS) {
-    return <Redirect push to={routesEnum.generateKeysPage} />;
+    return <Redirect push to={routesEnum.uploadValidatorPage} />;
   }
   if (step === WorkflowStep.UPLOAD_VALIDATOR_FILE) {
     return <Redirect push to={routesEnum.uploadValidatorPage} />;

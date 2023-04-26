@@ -45,6 +45,7 @@ const Container = styled(Paper)`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  background-color: #0c1324;
 `;
 const Dropzone = styled.div`
   outline: none;
@@ -56,7 +57,6 @@ const Dropzone = styled.div`
   margin: 20px auto auto;
   cursor: ${(p: { isFileAccepted: boolean; isFileStaged: boolean }) =>
     p.isFileAccepted || p.isFileStaged ? 'inherit' : 'pointer'};
-  box-shadow: ${(p: { theme: any }) => `0 0 10px ${p.theme.gray.light}`};
   padding: 30px;
   border-radius: ${(p: { theme: any }) => p.theme.borderRadius};
 `;

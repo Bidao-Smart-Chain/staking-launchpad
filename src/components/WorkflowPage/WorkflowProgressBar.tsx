@@ -6,7 +6,7 @@ import { rainbowColors } from '../../styles/styledComponentsTheme';
 import { WorkflowStep } from '../../store/actions/workflowActions';
 
 const Container = styled.div`
-  background-color: white;
+  background-color: #171f32;
 `;
 
 const StepContainer = styled.div`
@@ -24,7 +24,7 @@ const Step = styled.div`
     index: number;
     theme: any;
   }) => {
-    if (p.active) return rainbowColors[p.index];
+    if (p.active) return "#62e2ff";
     return p.theme.gray.medium;
   }};
   font-weight: ${p => (p.active ? 600 : undefined)};
@@ -47,18 +47,6 @@ export const WorkflowProgressBar = ({ workflow }: Props): JSX.Element => {
   `;
 
   const steps: step[] = [
-    {
-      step: WorkflowStep.OVERVIEW,
-      text: formatMessage({ defaultMessage: 'Advisories' }),
-    },
-    {
-      step: WorkflowStep.SELECT_CLIENT,
-      text: formatMessage({ defaultMessage: 'Choose client' }),
-    },
-    {
-      step: WorkflowStep.GENERATE_KEY_PAIRS,
-      text: formatMessage({ defaultMessage: 'Generate keys' }),
-    },
     {
       step: WorkflowStep.UPLOAD_VALIDATOR_FILE,
       text: formatMessage({ defaultMessage: 'Upload deposit data' }),
@@ -91,7 +79,7 @@ export const WorkflowProgressBar = ({ workflow }: Props): JSX.Element => {
             </Step>
             {i !== steps.length - 1 && (
               // @ts-ignore
-              <Arrow color={workflow === step ? rainbowColors[i] : undefined} />
+              <Arrow color={workflow === step ? "#62e2ff" : undefined} />
             )}
           </div>
         ))}

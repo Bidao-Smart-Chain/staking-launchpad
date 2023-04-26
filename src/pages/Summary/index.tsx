@@ -197,7 +197,7 @@ const _SummaryPage = ({
         <Row>
           <Link
             isTextLink={false}
-            to="https://ethereum.org/en/staking/deposit-contract/"
+            to="https://ascend.bidaochain.com/address/0x7139524768538BABB25b6EEA176325B40FD17E9b"
             primary
           >
             <Button

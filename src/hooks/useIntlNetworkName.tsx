@@ -6,7 +6,7 @@ const useIntlNetworkName = (): {
   consensusLayerName: string;
 } => {
   const { formatMessage } = useIntl();
-  const mainnet = formatMessage({ defaultMessage: 'Mainnet' });
+  const mainnet = formatMessage({ defaultMessage: 'bidao' });
   const executionLayerName: string = IS_MAINNET
     ? mainnet
     : formatMessage(

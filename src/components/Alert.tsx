@@ -4,27 +4,27 @@ import { Box, BoxProps } from 'grommet';
 
 const variantStyles = {
   primary: {
-    backgroundColor: '#cce5ff',
+    color: '#cce5ff',
     borderColor: '#b8daff',
   },
   warning: {
-    backgroundColor: '#fcf8e3',
-    borderColor: '#faebcc',
+    color: '#FFBF5C',
+    borderColor: '#FFBF5C',
   },
   secondary: {
-    backgroundColor: '#fdfcfe',
+    color: '#fdfcfe',
     borderColor: '#d3d3d3',
   },
   info: {
-    backgroundColor: '#d9edf7',
+    color: '#d9edf7',
     borderColor: '#bce8f1',
   },
   error: {
-    backgroundColor: '#f2dede',
+    color: '#f2dede',
     borderColor: '#ebccd1',
   },
   success: {
-    backgroundColor: '#d4edda',
+    color: '#d4edda',
     borderColor: '#c3e6cb',
   },
 };

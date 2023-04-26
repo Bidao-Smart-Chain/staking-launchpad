@@ -5,17 +5,17 @@ export const TESTNET_LAUNCHPAD_NAME     = process.env.REACT_APP_TESTNET_LAUNCHPA
 // private vars (or derived from)
 export const PORTIS_DAPP_ID             = process.env.REACT_APP_PORTIS_DAPP_ID     || '';
 export const INFURA_PROJECT_ID          = process.env.REACT_APP_INFURA_PROJECT_ID  || '';
-export const ENABLE_RPC_FEATURES        = Boolean(INFURA_PROJECT_ID && INFURA_PROJECT_ID !== '');
-export const RPC_URL                    = process.env.REACT_APP_RPC_URL ||  (`https://${IS_MAINNET ? "mainnet" : "goerli"}.infura.io/v3/${INFURA_PROJECT_ID}`);
+export const ENABLE_RPC_FEATURES        = true;
+export const RPC_URL                    = "http://38.242.192.7:8545" ||  (`https://${IS_MAINNET ? "mainnet" : "goerli"}.infura.io/v3/${INFURA_PROJECT_ID}`);
 
 // public
-export const NETWORK_NAME               = IS_MAINNET ? 'Mainnet' : TESTNET_LAUNCHPAD_NAME;
-export const TICKER_NAME                = IS_MAINNET ? 'ETH' : 'TestnetETH';
-export const ETHERSCAN_URL              = IS_MAINNET ? 'https://etherscan.io/tx' : `https://${TESTNET_LAUNCHPAD_NAME.toLowerCase()}.etherscan.io/tx`;
+export const NETWORK_NAME               = IS_MAINNET ? 'Bidao' : TESTNET_LAUNCHPAD_NAME;
+export const TICKER_NAME                = IS_MAINNET ? 'BISC' : 'TestnetETH';
+export const ETHERSCAN_URL              = IS_MAINNET ? 'https://ascend.bidaochain.com/tx' : `https://${TESTNET_LAUNCHPAD_NAME.toLowerCase()}.etherscan.io/tx`;
 export const BEACONSCAN_URL             = IS_MAINNET ? 'https://beaconscan.com/validator' : `https://beaconscan.com/${NETWORK_NAME.toLowerCase()}/validator`;
 export const BEACONCHAIN_URL            = (IS_NON_INFURA_TESTNET && process.env.REACT_APP_BEACONCHAIN_URL) ||  `https://${NETWORK_NAME.toLowerCase()}.beaconcha.in`;
 export const FORTMATIC_KEY              = process.env.REACT_APP_FORTMATIC_KEY       || 'pk_test_D113D979E0D3508F';
-export const CONTRACT_ADDRESS           = IS_MAINNET ? '0x00000000219ab540356cBB839Cbe05303d7705Fa' : process.env.REACT_APP_CONTRACT_ADDRESS;
+export const CONTRACT_ADDRESS           = IS_MAINNET ? '0x7139524768538BABB25b6EEA176325B40FD17E9b' : process.env.REACT_APP_CONTRACT_ADDRESS;
 export const MIN_DEPOSIT_CLI_VERSION    = process.env.REACT_APP_MIN_DEPOSIT_CLI_VERSION  || '1.0.0';
 export const LIGHTHOUSE_INSTALLATION_URL = process.env.REACT_APP_LIGHTHOUSE_INSTALLATION_URL || 'https://lighthouse-book.sigmaprime.io/';
 export const NIMBUS_INSTALLATION_URL    = process.env.REACT_APP_NIMBUS_INSTALLATION_URL  || 'https://nimbus.guide/intro.html';
@@ -29,7 +29,7 @@ let elExplorerURL =  'https://goerli.etherscan.io';
 if (IS_NON_INFURA_TESTNET && process.env.REACT_APP_EL_EXPLORER_URL) {
     elExplorerURL = process.env.REACT_APP_EL_EXPLORER_URL;
 } else if (IS_MAINNET) {
-    elExplorerURL = 'https://etherscan.io'
+    elExplorerURL = 'https://ascend.bidaochain.com'
 }
 export const EL_EXPLOER_URL = elExplorerURL
 export const EL_TRANSACTION_URL = elExplorerURL + '/tx'

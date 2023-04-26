@@ -40,8 +40,7 @@ import {
 import { useBeaconchainData } from '../../hooks/useBeaconchainData';
 
 const RainbowBackground = styled.div`
-  background-image: ${p =>
-    `radial-gradient(circle at 100% -80%, ${p.theme.rainbowLight})`};
+  background-color: #171f32;
   min-height: 100vh;
 `;
 
@@ -294,7 +293,7 @@ const _CongratulationsPage = ({
             {IS_MAINNET && (
               <>
                 <FormattedMessage
-                  defaultMessage="There is a short wait before your validator becomes active on the Beacon Chain. Use this time to complete the checklist and spend some time validating the {testnet}"
+                  defaultMessage="There is a short wait before your validator becomes active on the Beacon Chain."
                   values={{
                     testnet: (
                       <Link primary inline to={TESTNET_LAUNCHPAD_URL}>
@@ -306,13 +305,6 @@ const _CongratulationsPage = ({
                     ),
                   }}
                 />{' '}
-                <Link
-                  primary
-                  to="https://kb.beaconcha.in/ethereum-2.0-depositing"
-                  className="mt10"
-                >
-                  <FormattedMessage defaultMessage="Why is there a wait?" />
-                </Link>
               </>
             )}
             {!IS_MAINNET && (
@@ -384,83 +376,6 @@ const _CongratulationsPage = ({
                   </WarningRow>
                 )}
               </Card>
-              <Card>
-                <Heading level={3} size="medium" color="blueDark" margin="none">
-                  <FormattedMessage defaultMessage="Current APR" />
-                </Heading>
-                <Text size="x-large" className="mt20">
-                  <BoldGreen className="mr10">
-                    <LoadingHandler value={apr} />
-                  </BoldGreen>
-                </Text>
-              </Card>
-              {!allTxConfirmed ? (
-                <CardButton onClick={handleAllTransactionsClick}>
-                  <Row>
-                    <div>
-                      <Heading
-                        level={3}
-                        size="medium"
-                        color="blueDark"
-                        margin="none"
-                      >
-                        <span
-                          role="img"
-                          aria-label={formatMessage({
-                            defaultMessage: 'clipboard',
-                          })}
-                        >
-                          📋{' '}
-                        </span>
-                        <FormattedMessage defaultMessage="Next" />
-                      </Heading>
-                      <Text size="x-large" className="mt20">
-                        {remainingTxCount === 1 ? (
-                          <FormattedMessage defaultMessage="Complete your last deposit" />
-                        ) : (
-                          <FormattedMessage
-                            defaultMessage="Complete remaining {remainingTxCount} deposits"
-                            values={{ remainingTxCount }}
-                          />
-                        )}
-                      </Text>
-                      {remainingTxCount !== 1 && (
-                        <Text size="medium">
-                          <FormattedMessage defaultMessage="You can also confirm the deposits individually below..." />
-                        </Text>
-                      )}
-                    </div>
-                    {formArrow}
-                  </Row>
-                </CardButton>
-              ) : (
-                <CardLink to={`${routesEnum.checklistPage}/#section-three`}>
-                  <Row>
-                    <div>
-                      <Heading
-                        level={3}
-                        size="medium"
-                        color="blueDark"
-                        margin="none"
-                      >
-                        <span
-                          role="img"
-                          aria-label={formatMessage({
-                            defaultMessage: 'clipboard',
-                          })}
-                        >
-                          📋{' '}
-                        </span>
-                        <FormattedMessage defaultMessage="Next" />
-                      </Heading>
-                      <Text size="x-large" className="mt20">
-                        <FormattedMessage defaultMessage="Complete the staker checklist" />
-                      </Text>
-                    </div>
-                    {formArrow}
-                  </Row>
-                </CardLink>
-              )}
             </CardContainer>
           </div>
           {!allTxConfirmed && (
@@ -484,51 +399,6 @@ const _CongratulationsPage = ({
               <KeyList />
             </div>
           )}
-          <ChecklistAlert>
-            <Leslie />
-            <div>
-              <div className="flex">
-                <Heading level={3} size="medium" color="white" margin="none">
-                  <FormattedMessage defaultMessage="Thank you for supporting the Ethereum network!" />
-                </Heading>
-                <Text color="white" className="mt10">
-                  <FormattedMessage
-                    defaultMessage="Be sure to complete the {stakerChecklist} as soon as possible. And join the EthStaker community for support and discussion with fellow validators."
-                    values={{
-                      stakerChecklist: (
-                        <strong>
-                          {formatMessage({
-                            defaultMessage: 'staker checklist',
-                          })}
-                        </strong>
-                      ),
-                    }}
-                    description="{stakerChecklist} = 'Staker Checklist' bolded to draw attention"
-                  />
-                </Text>
-                <ButtonRow>
-                  <Link to={routesEnum.checklistPage} className="mt20">
-                    <Button
-                      label={formatMessage({ defaultMessage: 'Checklist' })}
-                      rainbow
-                    />
-                  </Link>
-                  <Link
-                    isTextLink={false}
-                    to="https://discord.io/ethstaker"
-                    className="mt20"
-                  >
-                    <Button
-                      fullWidth
-                      label={formatMessage({
-                        defaultMessage: 'EthStaker community',
-                      })}
-                    />
-                  </Link>
-                </ButtonRow>
-              </div>
-            </div>
-          </ChecklistAlert>
         </Content>
       </Gutter>
     </RainbowBackground>

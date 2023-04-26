@@ -20,8 +20,7 @@ const Gutter = styled.div`
 `;
 
 const RainbowBackground = styled.div`
-  background-image: ${p =>
-    `radial-gradient(circle at 100% -80%, ${p.theme.rainbowLight})`};
+  background: #171f32;
   min-height: 100vh;
 `;
 

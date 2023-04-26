@@ -4,7 +4,7 @@ import { Text } from './Text';
 
 const CodeContainer = styled(Text)`
   border: 1px solid #dc8180;
-  background-color: ${(p: any) => p.theme.red.lightest};
+  background-color: transparent;
   display: inline-block;
   border-radius: 4px;
   padding: 0 4px;

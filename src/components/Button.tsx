@@ -29,10 +29,10 @@ const StyledButton = styled(GrommetButton)`
   background-color: ${p =>
     p.primary ? p.theme.blue.dark : p.theme.gray.light};
   border: ${p => `1px solid ${p.theme.gray.medium}`};
+  color: #757e91;
   &:hover {
     border-radius: 4px;
     box-shadow: 0px 8px 17px rgba(0, 0, 0, 0.15);
-    background-image: ${p => `linear-gradient(to right, ${p.theme.rainbow})`};
     transition: transform 0.1s;
     transform: scale(1.02);
   }
@@ -40,9 +40,9 @@ const StyledButton = styled(GrommetButton)`
   ${p =>
     // @ts-ignore
     p.rainbow &&
-    `background-image: linear-gradient(to right, ${p.theme.rainbow});
+    `background-color: #62e2ff;
+     border: none;
      color: ${p.theme.blue.dark};
-     border: 1px solid ${p.theme.blue.dark};
    `}
 `;
 

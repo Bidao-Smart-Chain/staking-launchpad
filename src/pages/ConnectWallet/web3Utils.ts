@@ -22,6 +22,7 @@ export enum NetworkChainId {
   'Goerli' = 5,
   'Sepolia' = 11155111,
   'Zhejiang' = 1337803,
+  'Bidao' = 2119209,
 }
 
 export const NetworkChainIdDict: { [id: string]: number } = {
@@ -30,6 +31,7 @@ export const NetworkChainIdDict: { [id: string]: number } = {
   Goerli: 5,
   Sepolia: 11155111,
   Zhejiang: 1337803,
+  Bidao: 2119209,
 };
 
 /*
@@ -43,6 +45,7 @@ const supportedNetworks = [
   NetworkChainId.Goerli,
   NetworkChainId.Sepolia,
   NetworkChainId.Zhejiang,
+  NetworkChainId.Bidao,
 ];
 
 // FIXME: disabled Portis for now
@@ -57,6 +60,7 @@ enum Testnet {
   'Goerli',
   'Sepolia',
   'Zhejiang',
+  'Bidao',
 }
 
 enum Mainnet {
@@ -68,11 +72,10 @@ export const NetworkNameToChainId: { [key: string]: NetworkChainId } = {
   Ropsten: NetworkChainId.Ropsten,
   Goerli: NetworkChainId.Goerli,
   Zhejiang: NetworkChainId.Zhejiang,
+  Bidao: NetworkChainId.Bidao,
 };
 
-export const TARGET_NETWORK_CHAIN_ID = IS_MAINNET
-  ? NetworkChainId.Mainnet
-  : NetworkNameToChainId[TESTNET_LAUNCHPAD_NAME];
+export const TARGET_NETWORK_CHAIN_ID = 2119209;
 
 export const IS_GOERLI = TARGET_NETWORK_CHAIN_ID === NetworkChainId.Goerli;
 

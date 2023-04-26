@@ -123,7 +123,7 @@ const routes: RouteType[] = [
   { path: routesEnum.topUpPage, exact: true, component: TopUpPage },
   { path: routesEnum.withdrawals, exact: true, component: Withdrawals },
   { path: routesEnum.btecGuide, exact: true, component: BtecGuide },
-  { path: routesEnum.landingPage, exact: true, component: LandingPage },
+  { path: routesEnum.landingPage, exact: true, component: UploadValidatorPage },
   // NOTE: this wildcard route must be the last index of the routes array
   { path: routesEnum.notFoundPage, component: NotFoundPage },
 ];

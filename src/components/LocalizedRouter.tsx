@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 
 import { IntlProvider } from 'react-intl';
 import { Route, Redirect } from 'react-router-dom';
@@ -11,7 +11,7 @@ interface Props {
 }
 
 export const LocalizedRouter: React.FC<Props> = ({ children, history }) => (
-  <Router history={history}>
+  <HashRouter>
     <Route path="/:lang([a-z-]{2,5})">
       {({ match, location }) => {
         /**
@@ -46,5 +46,5 @@ export const LocalizedRouter: React.FC<Props> = ({ children, history }) => (
         );
       }}
     </Route>
-  </Router>
+  </HashRouter>
 );

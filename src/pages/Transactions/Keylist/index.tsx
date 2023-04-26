@@ -31,8 +31,6 @@ import { FormattedMessage, useIntl } from 'react-intl';
 
 const CustomTableRow = styled(p => <TableRow {...p} />)`
   background-color: ${(p: any) => {
-    if (p.header) return p.theme.purple.light;
-    if (p.invalid) return p.theme.red.lightest;
     return undefined;
   }};
 `;

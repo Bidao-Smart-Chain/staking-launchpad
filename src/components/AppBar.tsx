@@ -6,7 +6,7 @@ import { Box, DropButton } from 'grommet';
 import { Menu, Language, FormDown } from 'grommet-icons';
 import { useWeb3React } from '@web3-react/core';
 import { Web3Provider } from '@ethersproject/providers';
-import EthDiamond from '../static/eth-diamond-plain.svg';
+import EthDiamond from '../static/bidaow.svg';
 import { web3ReactInterface } from '../pages/ConnectWallet';
 import {
   AllowedELNetworks,
@@ -35,7 +35,8 @@ const HomeLink = styled(Link)`
 `;
 
 const RainbowBackground = styled(Box)`
-  background-image: ${p => `linear-gradient(to right, ${p.theme.rainbow})`};
+  background-color: #111a2e;
+  color: white;
 `;
 
 const EthLogo = styled.img`
@@ -199,135 +200,16 @@ const _AppBar = ({ location }: RouteComponentProps) => {
         <HomeLink to={routesEnum.landingPage}>
           <EthLogo src={EthDiamond} alt="eth-diamond" />
           {!mobile && (
-            <div className="flex flex-column center">
-              <BarLinkText
-                active={pathname === routesEnum.landingPage}
-                level={4}
-                margin="none"
-                className="bar-link-text no-padding"
-              >
-                <Text>
-                  <FormattedMessage
-                    defaultMessage="Staking Launchpad {network}"
-                    values={{
-                      network: IS_MAINNET ? '' : `(${NETWORK_NAME})`,
-                    }}
-                    description="{network} inserts the testnet name, only if on the testnet"
-                  />
-                </Text>
-              </BarLinkText>
-            </div>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+  <span style={{ fontSize: '24px', fontWeight: 700, letterSpacing: '1px', margin: 0, padding: 0, lineHeight: 1 }}>Bidao®</span>
+  <span style={{ fontSize: '18px', lineHeight: 1.1 }}>Ascend Devnet</span>
+</div>
           )}
         </HomeLink>
 
-        <Link
-          to={routesEnum.acknowledgementPage}
-          className="secondary-link" // RTL
-        >
-          <BarLinkText
-            level={4}
-            margin="none"
-            className="bar-link-text"
-            active={pathname === routesEnum.acknowledgementPage}
-          >
-            <FormattedMessage defaultMessage="Deposit" />
-          </BarLinkText>
-        </Link>
-        <ValidatorDropdown
-          className="secondary-link"
-          label={
-            <BarLinkText level={4} margin="none" active={isDropdownPage}>
-              <FormattedMessage defaultMessage="Clients" />
-            </BarLinkText>
-          }
-          dropAlign={{ top: 'bottom', right: dropAlignInline }}
-          dropContent={
-            <Box pad="medium">
-              <Text className="my10">
-                <b>Execution clients</b>
-              </Text>
-              <Box pad="small">
-                <DropdownLink to={routesEnum.besu}>Besu</DropdownLink>
-                <DropdownLink to={routesEnum.erigon}>Erigon</DropdownLink>
-                <DropdownLink to={routesEnum.geth}>Geth</DropdownLink>
-                <DropdownLink to={routesEnum.nethermind}>
-                  Nethermind
-                </DropdownLink>
-              </Box>
-              <Text className="my10">
-                <b>Consensus clients</b>
-              </Text>
-              <Box pad="small">
-                <DropdownLink to={routesEnum.lighthouse}>
-                  Lighthouse
-                </DropdownLink>
-                <DropdownLink to={routesEnum.lodestar}>Lodestar</DropdownLink>
-                <DropdownLink to={routesEnum.nimbus}>Nimbus</DropdownLink>
-                <DropdownLink to={routesEnum.prysm}>Prysm</DropdownLink>
-                <DropdownLink to={routesEnum.teku}>Teku</DropdownLink>
-              </Box>
-            </Box>
-          }
-        />
-        <Link to={routesEnum.checklistPage} className="secondary-link">
-          <BarLinkText
-            level={4}
-            margin="none"
-            className="bar-link-text"
-            active={pathname === routesEnum.checklistPage}
-          >
-            <FormattedMessage defaultMessage="Checklist" />
-          </BarLinkText>
-        </Link>
-        <Link to={routesEnum.FaqPage} className="secondary-link">
-          <BarLinkText
-            level={4}
-            margin="none"
-            className="bar-link-text"
-            active={pathname === routesEnum.FaqPage}
-          >
-            <FormattedMessage defaultMessage="FAQ" />
-          </BarLinkText>
-        </Link>
-        <Link to={routesEnum.topUpPage} className="secondary-link">
-          <BarLinkText
-            level={4}
-            margin="none"
-            className="bar-link-text"
-            active={pathname === routesEnum.topUpPage}
-          >
-            <FormattedMessage defaultMessage="Top Up" />
-          </BarLinkText>
-        </Link>
-        <Link to={routesEnum.withdrawals} className="mx10 secondary-link">
-          <BarLinkText
-            level={4}
-            margin="none"
-            className="bar-link-text"
-            active={pathname === routesEnum.withdrawals}
-          >
-            <FormattedMessage defaultMessage="Withdrawals" />
-          </BarLinkText>
-        </Link>
       </NavBarLinks>
+      {/*
       <NavLinksRight>
-        {!mobile && (
-          <Link to={routesEnum.languagesPage} className="secondary-link">
-            <BarLinkText
-              level={4}
-              margin="none"
-              className="bar-link-text"
-              active={pathname === routesEnum.languagesPage}
-            >
-              <FormattedMessage defaultMessage="Languages" />
-            </BarLinkText>
-          </Link>
-        )}
-        {mobile && (
-          <Link to={routesEnum.languagesPage} className="mx10">
-            <Language color="black" />
-          </Link>
-        )}
         {mobile && (
           <ValidatorDropdown
             className="secondary-link"
@@ -468,6 +350,7 @@ const _AppBar = ({ location }: RouteComponentProps) => {
           </DotDropdownBox>
         )}
       </NavLinksRight>
+      */}
     </RainbowBackground>
   );
 };
